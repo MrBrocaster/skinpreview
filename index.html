@@ -17,5 +17,28 @@
                 <div class="message message-twitch message-me"><img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" class="icon icon-twitch" draggable="false"><img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1" class="icon icon-twitch" draggable="false"><span class="sender" style="color: rgb(0, 4, 255);">lurker</span><span> </span><span class="message-text" style="color: rgb(0, 4, 255);">makes some noise </span></div>
             </div>
         </div>
+
+        <script>
+            (function() {
+                function getQueryVar(varName){
+                    var queryStr = unescape(window.location.search) + '&';
+                    var regex = new RegExp('.*?[&\\?]' + varName + '=(.*?)&.*');
+                    var val = queryStr.replace(regex, "$1");
+                    return val == queryStr ? false : val;
+                }
+
+                var style = document.createElement('style');
+                style.textContent = atob(getQueryVar('css'));
+                document.body.appendChild(style);
+
+                try {
+                    var js = getQueryVar('js');
+                    if (js)
+                        window.eval(atob(js));
+                } catch (err) {
+                    console.log(err);
+                }
+            })();
+        </script>
     </body>
 </html>
