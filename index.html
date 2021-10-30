@@ -1,44 +1,128 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Brocaster Chat Preview</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" />
-        <style>@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:local('Nunito Regular'),local(Nunito-Regular),url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIOOaBXso.woff2) format("woff2");unicode-range:U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:local('Nunito Regular'),local(Nunito-Regular),url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIMeaBXso.woff2) format("woff2");unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:local('Nunito Regular'),local(Nunito-Regular),url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIOuaBXso.woff2) format("woff2");unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:local('Nunito Regular'),local(Nunito-Regular),url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofIO-aBXso.woff2) format("woff2");unicode-range:U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:local('Nunito Regular'),local(Nunito-Regular),url(https://fonts.gstatic.com/s/nunito/v12/XRXV3I6Li01BKofINeaB.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}html,body{width:100%;height:100%;overflow:hidden}body{background:#000;color:#fff;font-family:'Nunito',sans-serif;scroll-behavior:smooth}.fullscreen-mode{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden}.fullscreen-mode .messages{position:absolute;bottom:0;left:0;width:100%}.scroll-mode .messages{overflow:hidden}.message{font-size:19px;margin-bottom:6px;animation:showAnimation .2s ease-in-out}.message .icon{width:18px;height:18px;margin-right:4px;margin-bottom:-1px}.message .emote{margin-bottom:-3px;margin-left:1px;margin-right:1px;max-width:20px}.message .message-text{overflow-wrap:break-word;word-wrap:break-word}.message-highlighted{margin-top:15px;margin-bottom:15px;font-size:20px}.room{padding:2px;margin:0 4px;border-radius:4px;font-size:17px;display:inline-block}.room-twitch{background:#6441A4}@keyframes showAnimation{from{opacity:0}to{opacity:1}}.brocaster-errors{position:fixed;z-index:2;top:0;left:0;width:100%}.brocaster-error{background-color:#c40000;color:#fff;font-weight:400;font-size:18px;animation:showAnimation .4s ease-in-out;padding:4px}</style>
+        <title>Brocaster Chat Skin Preview</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+            html, body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: #000;
+                color: #fff;
+                font-family: 'Open Sans', sans-serif;
+                scroll-behavior: smooth;
+                font-weight: 400;
+            }
+
+            .fullscreen-mode {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            .fullscreen-mode .messages {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+            }
+
+            .scroll-mode .messages {
+                overflow: hidden;
+            }
+
+            .message {
+                font-size: 19px;
+                margin-bottom: 6px;
+                animation: showAnimation 0.2s ease-in-out;
+                line-height: 24px;
+            }
+
+            .message .icon {
+                width: 21px;
+                height: 21px;
+                margin-right: 4px;
+                margin-bottom: -5px;
+            }
+
+            .message .icon:last-of-type {
+                margin-right: 8px;
+            }
+
+            .message .emote {
+                margin-bottom: -8px;
+                margin-left: 1px;
+                margin-right: 1px;
+                max-width: 32px;
+            }
+
+            .message .sender {
+                font-weight: 600;
+            }
+
+            .message .message-text {
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+            }
+
+            .message .time {
+                margin-right: 8px;
+                color: #dbdbdb;
+            }
+
+            .message-highlighted {
+                background-color: #1b1b1b;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                color: #f5b5b5;
+            }
+
+            .room {
+                color: #a3a3a3;
+                display: inline-block;
+                margin-right: 8px;
+            }
+        </style>
     </head>
     <body>
-        <div class="brocaster-widget fullscreen-mode">
+        <div class="brocaster-widget">
             <div class="messages">
-                <div class="message message-twitch"><img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" class="icon icon-twitch" draggable="false"><img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1" class="icon icon-twitch" draggable="false"><span class="sender" style="color: rgb(255, 0, 0);">TestUser</span><span>: </span><span class="message-text">Hello! This is a test message! GLHF </span></div>
-                <div class="message message-twitch"><img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" class="icon icon-twitch" draggable="false"><img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1" class="icon icon-twitch" draggable="false"><span class="sender" style="color: rgb(65, 255, 151);">another_user</span><span>: </span><span class="message-text">Some  </span><span class="message-text">test  </span><span class="message-text">emotes  </span><img draggable="false" class="emote emote-ffz" src="//cdn.frankerfacez.com/99/c5/99c5821c6dd1d8f642bbbf7f876bc75b.PNG"><img draggable="false" class="emote emote-twitch" src="https://static-cdn.jtvnw.net/emoticons/v1/4057/1.0"></div>
-                <div class="message message-twitch"><img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" class="icon icon-twitch" draggable="false"><span class="sender" style="color: rgb(0, 184, 168);">Иван Иванов</span><span>: </span><span class="message-text">Так будет выглядеть скин вашего чата.  </span><img draggable="false" class="emote emote-twitch" src="https://static-cdn.jtvnw.net/emoticons/v1/81103/1.0"></div>
-                <div class="message message-twitch message-highlighted"><span class="sender" style="color: rgb(255, 255, 255);">Niceman</span><span>: </span><span class="message-text" style="color: rgb(255, 255, 255);">redeemed a reward x100 </span></div>
-                <div class="message message-twitch message-me"><img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/1" class="icon icon-twitch" draggable="false"><img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/1" class="icon icon-twitch" draggable="false"><span class="sender" style="color: rgb(0, 4, 255);">lurker</span><span> </span><span class="message-text" style="color: rgb(0, 4, 255);">makes some noise </span></div>
+                <div class="message message-twitch" user-id="1" msg-id="1" room="1" creation-time="1">
+                    <img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/2" class="icon icon-twitch" draggable="false">
+                    <span class="sender" style="color: rgb(255, 0, 0);">Max</span>
+                    <span>: </span>
+                    <span class="message-text">Hello guys! This is a test chat message. Special for you. Special for the skin preview.</span>
+                </div>
+                <div class="message message-twitch message-me" user-id="1" msg-id="2" room="1" creation-time="1">
+                    <span class="sender" style="color: rgb(0, 68, 255);">hedgehog</span>
+                    <span> </span>
+                    <span class="message-text" style="color: rgb(0, 68, 255);">is making some noise </span>
+                </div>
+                <div class="message message-twitch" user-id="1" msg-id="3" room="1" creation-time="1">
+                    <img src="https://static-cdn.jtvnw.net/badges/v1/5527c58c-fb7d-422d-b71b-f309dcb85cc1/2" class="icon icon-twitch" draggable="false">
+                    <img src="https://static-cdn.jtvnw.net/badges/v1/5d9f2208-5dd8-11e7-8513-2ff4adfae661/2" class="icon icon-twitch" draggable="false">
+                    <span class="sender" style="color: rgb(0, 255, 76);">ContentMaker</span>
+                    <span>: </span>
+                    <span class="message-text">some emotes  </span>
+                    <img draggable="false" class="emote emote-twitch" src="https://static-cdn.jtvnw.net/emoticons/v1/25/2.0">
+                </div>
+                <div class="message message-twitch message-highlighted" user-id="1" msg-id="4" room="1" creation-time="1">
+                    <span class="sender" style="color: rgb(255, 255, 255);">NiceMan</span>
+                    <span>: </span>
+                    <span class="message-text" style="color: rgb(255, 255, 255);">used superpower x100 </span>
+                </div>
             </div>
         </div>
-
-        <script>
-            (function() {
-                function getQueryVar(varName){
-                    var queryStr = unescape(window.location.search) + '&';
-                    var regex = new RegExp('.*?[&\\?]' + varName + '=(.*?)&.*');
-                    var val = queryStr.replace(regex, "$1");
-                    return val == queryStr ? false : val;
-                }
-
-                var style = document.createElement('style');
-                style.textContent = atob(getQueryVar('css'));
-                document.body.appendChild(style);
-
-                try {
-                    var js = getQueryVar('js');
-                    if (js)
-                        window.eval(atob(js));
-                } catch (err) {
-                    console.log(err);
-                }
-            })();
-        </script>
     </body>
 </html>
